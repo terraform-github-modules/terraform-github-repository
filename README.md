@@ -24,8 +24,9 @@ These features of Github Repository configurations are supported:
 module "repo" {
   source = "terraform-github-modules/terraform-github-repository/github"
 
-  name         = "my-repo"
-  visibility   = "private"
+  name           = "my-repo"
+  visibility     = "private"
+  default_branch = "main"
 }
 ```
 
