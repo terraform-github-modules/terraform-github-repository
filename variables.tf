@@ -452,5 +452,11 @@ variable "actions" {
     condition     = var.actions == null || try(var.actions.permissions, null) == null || try(var.actions.permissions.allowed_actions, null) == null || can(regex("^all$|^local_only$|^selected$", var.actions.permissions.allowed_actions))
     error_message = "permissions.allowed_actions: Only all, local_only and selected values are allowed"
   }
+}
 
+
+variable "properties" {
+  description = "(Optional) The list of properties of the repository (key: property_name)"
+  type        = map(string)
+  default     = null
 }

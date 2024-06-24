@@ -395,3 +395,10 @@ resource "github_repository_environment_deployment_policy" "this" {
   environment    = github_repository_environment.this[each.value.environment].environment
   branch_pattern = each.value.branch_pattern
 }
+
+module "properties" {
+  count      = try(var.properties, null) != null ? 1 : 0
+  source     = "./modules/properties"
+  repository = github_repository.this.name
+  properties = var.properties
+}
