@@ -24,4 +24,4 @@ jobs:
         uses: googleapis/release-please-action@v4
         with:
           token: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
-          release-type: simple
+          release-type: terraform-module
